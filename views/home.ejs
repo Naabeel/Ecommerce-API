@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
+    <title><%= title%></title>
+</head>
+<body>
+
+    <h1>Page for testing the Api</h1>
+
+    <div id="container">
+    <div id="form_div">
+        <h2>Update form</h2>
+        <form action="/addproduct" method="post">
+            <div>
+                <label for="id">ID:</label>
+                <input id="id" type="number" name="id" required placeholder="id">
+            </div>
+    
+            <div>
+                <label for="name">Name:</label>
+                <input id="name" type="text" name="name" required placeholder="name">
+            </div>
+    
+            <div>
+                <label for="quantity">Quantity:</label>
+                <input id="quantity" type="number" name="quantity" required placeholder="quantity">
+    
+            </div>
+    
+            <div>
+                <button type="submit">Add Product</button>
+    
+            </div>
+        </form>
+    </div>
+
+    <div id="products_div">
+        <ul>
+            <%for(i of Products){%>
+                <li class="product_list">
+                    <div class="product_details">
+                    <p><span class="titlespan">ID:</span><%= i.id%></p>
+                    <p><span class="titlespan">Name:</span><%= i.name%></p>
+                    <p><span class="titlespan">Quantity:</span><%= i.quantity%></p>
+                    </div>
+                    <div id="update_form">
+                        <form class="updation_form" action="/update/<%= i._id%>" method="post">
+                            <input name="id" type="text" value="<%= i.id%>">
+                            <input name="name" type="text" value="<%= i.name%>">
+                            <input name="quantity" type="text" value="<%= i.quantity%>">
+                            
+                            <button type="submit" id="update_btn">Update</button>
+    
+                        </form>
+                        
+                    </div>
+                    <a id="delete_product" href="/delete/<%= i._id%>">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </a>
+                </li>    
+            <%}%>
+        </ul>
+    </div>
+</div>
+
+
+
+<script src="https://kit.fontawesome.com/ad3c4c04de.js" crossorigin="anonymous"></script>
+
+<script src="/js/index.js"></script>
+</body>
+</html>

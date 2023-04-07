@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+button{
+    border: 1px solid grey;
+    padding: 5px;
+}
+
+h1{
+    text-align: center;
+}
+
+#container{
+    margin-top: 2%;
+    height: 86vh;
+    /* border: 1px solid brown; */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#form_div{
+    border-right: 1px solid black;
+    flex: 0.2;
+}
+
+#form_div form div{
+    margin: 20px 10px;
+}
+
+#products_div{
+    height: 100%;
+    /* border: 1px dashed red; */
+    flex: 0.7;
+}
+
+#products_div ul{
+    height: 100%;
+    /* border: 1px solid green; */
+    list-style: none;
+    overflow-x: hidden;
+}
+
+#products_div ul::-webkit-scrollbar {
+    display: none;
+  }
+
+
+.product_list{
+    border: 0.1px solid grey;
+    /* border-radius: 10px; */
+    margin-bottom: 10px;
+    padding-left: 10px;
+    display: flex;
+    position: relative;
+
+}
+
+.product_details p{
+    margin: 13px 0px 0px 0px;
+}
+
+.product_list:hover{
+    background-color: rgb(173, 172, 172);
+}
+
+.titlespan{
+    margin-right: 10px;
+}
+
+.updation_form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+#update_form form input{
+    margin-top: 13px;
+    margin-left: 10px;
+}
+
+#update_btn{
+    width: 50%;
+    /* padding: 2px; */
+    margin-left: 10px;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+#delete_product{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+#submit_update{
+    width: 50%;
+    margin-left: 10px;
+    /* display: none; */
+    margin-bottom: 10px;
+}
